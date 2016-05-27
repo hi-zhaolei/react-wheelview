@@ -3,7 +3,7 @@
 * @Date:   2016-05-24T16:12:35+08:00
 * @Email:  leozhao.go@gmail.com
 * @Last modified by:   leozhao
-* @Last modified time: 2016-05-25T19:30:55+08:00
+* @Last modified time: 2016-05-27T17:59:21+08:00
 */
 
 
@@ -34,7 +34,7 @@ export default class TimePicker extends Component {
   }
 
   clickHandle () {
-    this.props.fillPickedTime(`${('0'+this.state.hour).slice(-2)}:${('0'+this.state.minute).slice(-2)}`);
+    this.props.getPickedData(`${('0'+this.state.hour).slice(-2)}:${('0'+this.state.minute).slice(-2)}`);
   }
 
   touchStart (ev) {
@@ -149,7 +149,7 @@ export default class TimePicker extends Component {
   render () {
 
     return (
-      <div className={styles.timepicker} style={{transform: 'translateY(' + (this.props.timePickerDisplay ? 0 : '120%') + ')'}}  onTouchStart={this.touchStart.bind(this)} onTouchMove={this.touchMove.bind(this)} onTouchEnd={this.touchEnd.bind(this)}>
+      <div className={styles.timepicker} style={{transform: 'translateY(' + (this.props.wheelviewDisplay ? 0 : '120%') + ')'}}  onTouchStart={this.touchStart.bind(this)} onTouchMove={this.touchMove.bind(this)} onTouchEnd={this.touchEnd.bind(this)}>
         <div className={styles.optionPicker}>
           <ul
             className={styles.hoursList}
